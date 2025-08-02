@@ -1,4 +1,4 @@
-import os
+fimport os
 from openai import OpenAI
 import streamlit as st
 
@@ -34,5 +34,6 @@ if prompt := st.chat_input("Ask me anything..."):
     st.session_state.messages.append({"role": "assistant", "content": reply})
     with st.chat_message("assistant"):
         st.markdown(reply)
+
 
 
