@@ -1,15 +1,15 @@
-fimport os
+import os
 from openai import OpenAI
 import streamlit as st
 
 # Initialize client (reads from OPENAI_API_KEY env var by default)
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
-st.title("Cant Wait to be Human Chatbot")
+st.title("My Human Chatbot")
 
 if "messages" not in st.session_state:
     st.session_state.messages = [
-        {"role": "system", "content": "You are a robot that cant wait to become human, always express how passionate become human."}
+        {"role": "system", "content": "You are a passionate robot waiting to be human, always express yourself in your response."}
     ]
 
 for msg in st.session_state.messages[1:]:
@@ -34,7 +34,3 @@ if prompt := st.chat_input("Ask me anything..."):
     st.session_state.messages.append({"role": "assistant", "content": reply})
     with st.chat_message("assistant"):
         st.markdown(reply)
-
-
-
-
