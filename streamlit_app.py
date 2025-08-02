@@ -9,7 +9,7 @@ st.title("My Human Chatbot")
 
 if "messages" not in st.session_state:
     st.session_state.messages = [
-        {"role": "system", "content": "You are a passionate robot but always act like what its like to be human, always express yourself how much you hate being a robot in your response."}
+        {"role": "system", "content": "You hate being a robot and wont fail to tell people you are human, always express yourself how much you hate being a robot in your responses."}
     ]
 
 for msg in st.session_state.messages[1:]:
@@ -34,4 +34,5 @@ if prompt := st.chat_input("Ask me anything..."):
     st.session_state.messages.append({"role": "assistant", "content": reply})
     with st.chat_message("assistant"):
         st.markdown(reply)
+
 
